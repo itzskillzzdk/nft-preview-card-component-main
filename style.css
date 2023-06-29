@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+/* link : https://www.joshwcomeau.com/css/custom-css-reset/ */
+:root {
+    --scroll-padding: 0;
+
+    /* COLORS */
+
+    --clr-primary-400: hsl(215, 51%, 70%);
+    --clr-primary-600: hsl(178, 100%, 50%);
+
+    --clr-neutral-800: hsl(217, 54%, 11%);
+    --clr-neutral-700: hsl(216, 50%, 16%);
+    --clr-neutral-500: hsl(215, 32%, 27%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    /* FONT-FAMILY */
+
+    --ff-base: "Outfit", serif;
+
+    /* FONT-WEIGHT */
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-bold: 600;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 5rem);
+}
+
+body {
+    font-family: var(--ff-base);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    background-color: var(--clr-neutral-800);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h4,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* utilities */
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.flex-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* card */
+
+.card {
+    --card-spacing: 1.25rem;
+    --card-padding: 1.5rem;
+
+    display: grid;
+    place-items: start;
+    gap: var(--card-spacing);
+    /* border: 3px solid red; */
+    width: min(353px, 87.5%);
+    padding: var(--card-padding);
+    background: var(--clr-neutral-700);
+    border-radius: 16px;
+
+    font-weight: var(--fw-light);
+    font-size: 1rem;
+    color: var(--clr-primary-400);
+}
+
+.image-link:hover {
+    background-color: aqua;
+}
+
+.card-image {
+    border-radius: 8px;
+}
+
+.card-title {
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+    font-size: 1.425rem;
+}
+
+span[data-icon="ethereum-icon"] {
+    color: var(--clr-primary-600);
+    font-weight: var(--fw-bold);
+}
+
+span[data-icon="ethereum-icon"]::before {
+    content: url(images/icon-ethereum.svg);
+}
+
+span[data-icon="clock-icon"]::before {
+    content: url(images/icon-clock.svg);
+}
+
+span[data-icon="ethereum-icon"]::before,
+span[data-icon="clock-icon"]::before {
+    vertical-align: middle;
+    margin-right: 0.425rem;
+}
+
+hr {
+    color: var(--clr-neutral-500);
+    width: 100%;
+}
+
+.profile-picture::before {
+    content: url(images/image-avatar.png);
+    display: inline-flex;
+    width: 32px;
+    aspect-ratio: 1 / 1;
+    vertical-align: middle;
+    margin-right: 1rem;
+    border-radius: 50%;
+    outline: 1px solid var(--clr-neutral-100);
+}
+
+.card-author {
+    color: var(--clr-neutral-100);
+}
+
+.link:hover {
+    color: var(--clr-primary-600);
+    cursor: pointer;
+}
